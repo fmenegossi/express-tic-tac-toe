@@ -1,6 +1,7 @@
-# Express Games API
+# Express Tic-Tac-Toe API
+##### The front-end application can be found [here](https://github.com/fmenegossi/react-tic-tac-toe "here")
 
-RESTful Express API for Games on top of MongoDB.
+RESTful Express API for Tic-Tac-Toe on top of MongoDB.
 
 ## Authentication
 

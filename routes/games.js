@@ -6,7 +6,7 @@ const utils = require('../lib/utils')
 
 const authenticate = passport.authorize('jwt', { session: false })
 
-module.exports = io => {
+module.exports =  io => {
   router
     .get('/games', (req, res, next) => {
       Game.find()
@@ -32,11 +32,12 @@ module.exports = io => {
         userId: req.account._id,
         players: [{
           userId: req.account._id,
-          pairs: []
+          pairs: [],
         }],
-        cards: utils.shuffle('✿✪♦✵♣♠♥✖'.repeat(2).split(''))
-          .map((symbol) => ({ visible: false, symbol }))
+        board: ["-","-","-","-","-","-","-","-","-",],
       }
+
+      console.log(newGame.board)
 
       Game.create(newGame)
         .then((game) => {
